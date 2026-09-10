@@ -17,23 +17,34 @@ Le travail porte notamment sur :
 
 ## Périmètre du PoC
 
-Le PoC se concentre sur la recommandation stylistique : analyser des photos de vêtements déjà possédés puis proposer un petit nombre d'articles d'un catalogue ayant une affinité de style.
+Le PoC se concentre sur la recommandation stylistique : analyser des photos de l'utilisateur portant les vêtements de sa garde-robe, puis proposer un petit nombre d'articles du catalogue Fashion-Insta correspondant aux goûts déduits de cette garde-robe.
 
 Il ne vise pas à réaliser une application mobile complète. Les fonctionnalités telles que l'essayage virtuel, la personnalisation générative, la recommandation à partir des tendances ou des avis, et l'intégration e-commerce sont hors périmètre à ce stade.
+
+Le détail (décision de cadrage, données retenues, hors périmètre, hypothèses) est formalisé dans [`Travail/01-poc/perimetre-poc.md`](Travail/01-poc/perimetre-poc.md).
 
 ## Structure du dépôt
 
 ```text
 .
-├── README.md                # Vue d'ensemble et conventions du dépôt
-└── .gitignore               # Exclusions de versionnement
+├── README.md                        # Vue d'ensemble et conventions du dépôt
+├── .gitignore                       # Exclusions de versionnement
+├── Projet/                          # Mission et documents fournis par l'école/Alicia
+├── Sources/                         # Ressources de référence (métier, données, pricing Azure, templates)
+├── Travail/
+│   ├── 01-poc/
+│   │   └── perimetre-poc.md         # Cadrage du périmètre du PoC (entrées, sorties, hors périmètre, hypothèses)
+│   ├── 02-solution-production/      # Travaux à venir : architecture et déploiement cible
+│   └── 03-donnees-personnelles/     # Travaux à venir : traitement des données personnelles et risques
+└── Presentation/                    # Support de restitution final
 ```
 
 La structure évoluera avec les prochaines étapes. Les répertoires seront ajoutés lorsqu'ils accueilleront un contenu utile au projet.
 
 ## Feuille de route
 
-- [ ] Formaliser le périmètre, les hypothèses et les critères de succès du PoC.
+- [x] Formaliser le périmètre et les hypothèses du PoC.
+- [ ] Définir le critère de succès métier du PoC.
 - [ ] Identifier les jeux de données et évaluer leur adéquation.
 - [ ] Définir l'approche de recommandation et le protocole d'évaluation.
 - [ ] Proposer le system design cible.
@@ -43,4 +54,4 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 
 ## État actuel
 
-Le dépôt vient d'être initialisé. La première étape consiste à stabiliser le cadrage du Poc et ses critères de succès.
+Le périmètre du PoC et ses hypothèses sont formalisés dans `Travail/01-poc/perimetre-poc.md`. Prochaine étape : définir le critère de succès métier, puis traduire le besoin en problème ML.
