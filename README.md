@@ -29,6 +29,8 @@ Le dataset candidat pour simuler les photos de garde-robe est documenté dans [`
 
 Le critère de succès métier et sa traduction technique (NDCG@5 ≥ 0,7) sont fixés dans [`Travail/01-poc/critere-succes.md`](Travail/01-poc/critere-succes.md), avec un critère de comparaison explicite entre les deux approches candidates.
 
+La durée et le dimensionnement en profils/jours-hommes du PoC (~21,5 jours-hommes, 4 à 5 semaines) sont détaillés dans [`Travail/01-poc/dimensionnement.md`](Travail/01-poc/dimensionnement.md), avec les principaux risques de chiffrage.
+
 ## Structure du dépôt
 
 ```text
@@ -42,7 +44,8 @@ Le critère de succès métier et sa traduction technique (NDCG@5 ≥ 0,7) sont 
 │   │   ├── perimetre-poc.md         # Cadrage du périmètre du PoC (entrées, sorties, hors périmètre, hypothèses)
 │   │   ├── probleme-ml.md           # Traduction en problème ML : approches candidates et protocole d'évaluation
 │   │   ├── datasets-candidats.md    # Dataset candidat pour simuler les photos de garde-robe, et ses limites
-│   │   └── critere-succes.md        # Critère de succès métier et traduction technique (NDCG@5)
+│   │   ├── critere-succes.md        # Critère de succès métier et traduction technique (NDCG@5)
+│   │   └── dimensionnement.md       # Durée, profils et jours-hommes du PoC, et risques de chiffrage
 │   ├── 02-solution-production/      # Travaux à venir : architecture et déploiement cible
 │   └── 03-donnees-personnelles/     # Travaux à venir : traitement des données personnelles et risques
 └── Presentation/                    # Support de restitution final
@@ -56,11 +59,13 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 - [x] Définir l'approche de recommandation et le protocole d'évaluation.
 - [x] Identifier un jeu de données candidat et évaluer son adéquation.
 - [x] Définir le critère de succès métier du PoC (seuil chiffré à valider).
+- [x] Estimer la durée et les profils/jours-hommes nécessaires au PoC.
+- [ ] Lister les limites, risques et prochaines étapes hors périmètre du PoC.
 - [ ] Proposer le system design cible.
-- [ ] Construire la timeline de livraison et le dimensionnement du projet.
+- [ ] Construire la timeline de livraison et le dimensionnement économique du projet en production.
 - [ ] Documenter le traitement des données personnelles, les risques et les mesures associées.
-- [ ] Préparer le support de restitution final.
+- [ ] Préparer le support de restitution final (.pptx).
 
 ## État actuel
 
-Le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`) et le critère de succès (`critere-succes.md`) sont formalisés. Prochaine étape : estimer la durée et les profils/jours-hommes nécessaires au PoC, puis lister ses limites et risques hors périmètre.
+Le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`) et le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) sont formalisés. Prochaine étape : lister les limites, risques et prochaines étapes hors périmètre du PoC.
