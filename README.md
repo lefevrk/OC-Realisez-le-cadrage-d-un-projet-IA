@@ -27,6 +27,8 @@ Le besoin est traduit en problème ML dans [`Travail/01-poc/probleme-ml.md`](Tra
 
 Le dataset candidat pour simuler les photos de garde-robe est documenté dans [`Travail/01-poc/datasets-candidats.md`](Travail/01-poc/datasets-candidats.md) (DeepFashion Consumer-to-shop, côté "consumer" uniquement), évalué contre le vrai catalogue Fashion-Insta une fois celui-ci extrait.
 
+Le critère de succès métier et sa traduction technique (NDCG@5 ≥ 0,7) sont fixés dans [`Travail/01-poc/critere-succes.md`](Travail/01-poc/critere-succes.md), avec un critère de comparaison explicite entre les deux approches candidates.
+
 ## Structure du dépôt
 
 ```text
@@ -39,7 +41,8 @@ Le dataset candidat pour simuler les photos de garde-robe est documenté dans [`
 │   ├── 01-poc/
 │   │   ├── perimetre-poc.md         # Cadrage du périmètre du PoC (entrées, sorties, hors périmètre, hypothèses)
 │   │   ├── probleme-ml.md           # Traduction en problème ML : approches candidates et protocole d'évaluation
-│   │   └── datasets-candidats.md    # Dataset candidat pour simuler les photos de garde-robe, et ses limites
+│   │   ├── datasets-candidats.md    # Dataset candidat pour simuler les photos de garde-robe, et ses limites
+│   │   └── critere-succes.md        # Critère de succès métier et traduction technique (NDCG@5)
 │   ├── 02-solution-production/      # Travaux à venir : architecture et déploiement cible
 │   └── 03-donnees-personnelles/     # Travaux à venir : traitement des données personnelles et risques
 └── Presentation/                    # Support de restitution final
@@ -52,7 +55,7 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 - [x] Formaliser le périmètre et les hypothèses du PoC.
 - [x] Définir l'approche de recommandation et le protocole d'évaluation.
 - [x] Identifier un jeu de données candidat et évaluer son adéquation.
-- [ ] Définir le critère de succès métier du PoC (seuil chiffré à valider).
+- [x] Définir le critère de succès métier du PoC (seuil chiffré à valider).
 - [ ] Proposer le system design cible.
 - [ ] Construire la timeline de livraison et le dimensionnement du projet.
 - [ ] Documenter le traitement des données personnelles, les risques et les mesures associées.
@@ -60,4 +63,4 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 
 ## État actuel
 
-Le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées) et le dataset candidat (`datasets-candidats.md`) sont formalisés. Prochaine étape : fixer le seuil chiffré du critère de succès métier.
+Le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`) et le critère de succès (`critere-succes.md`) sont formalisés. Prochaine étape : estimer la durée et les profils/jours-hommes nécessaires au PoC, puis lister ses limites et risques hors périmètre.
