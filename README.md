@@ -25,6 +25,8 @@ Le détail (décision de cadrage, données retenues, hors périmètre, hypothès
 
 Le besoin est traduit en problème ML dans [`Travail/01-poc/probleme-ml.md`](Travail/01-poc/probleme-ml.md) : deux approches candidates (correspondance par tags, matching structuré par similarité vectorielle) sont comparées sur un protocole d'évaluation commun, jugé par des experts métier à l'aveugle.
 
+Le dataset candidat pour simuler les photos de garde-robe est documenté dans [`Travail/01-poc/datasets-candidats.md`](Travail/01-poc/datasets-candidats.md) (DeepFashion Consumer-to-shop, côté "consumer" uniquement), évalué contre le vrai catalogue Fashion-Insta une fois celui-ci extrait.
+
 ## Structure du dépôt
 
 ```text
@@ -36,7 +38,8 @@ Le besoin est traduit en problème ML dans [`Travail/01-poc/probleme-ml.md`](Tra
 ├── Travail/
 │   ├── 01-poc/
 │   │   ├── perimetre-poc.md         # Cadrage du périmètre du PoC (entrées, sorties, hors périmètre, hypothèses)
-│   │   └── probleme-ml.md           # Traduction en problème ML : approches candidates et protocole d'évaluation
+│   │   ├── probleme-ml.md           # Traduction en problème ML : approches candidates et protocole d'évaluation
+│   │   └── datasets-candidats.md    # Dataset candidat pour simuler les photos de garde-robe, et ses limites
 │   ├── 02-solution-production/      # Travaux à venir : architecture et déploiement cible
 │   └── 03-donnees-personnelles/     # Travaux à venir : traitement des données personnelles et risques
 └── Presentation/                    # Support de restitution final
@@ -48,7 +51,7 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 
 - [x] Formaliser le périmètre et les hypothèses du PoC.
 - [x] Définir l'approche de recommandation et le protocole d'évaluation.
-- [ ] Identifier les jeux de données et évaluer leur adéquation.
+- [x] Identifier un jeu de données candidat et évaluer son adéquation.
 - [ ] Définir le critère de succès métier du PoC (seuil chiffré à valider).
 - [ ] Proposer le system design cible.
 - [ ] Construire la timeline de livraison et le dimensionnement du projet.
@@ -57,4 +60,4 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 
 ## État actuel
 
-Le périmètre du PoC (`perimetre-poc.md`) et sa traduction en problème ML (`probleme-ml.md`, deux approches comparées) sont formalisés. Prochaine étape : rechercher les jeux de données candidats, puis fixer le seuil chiffré du critère de succès métier.
+Le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées) et le dataset candidat (`datasets-candidats.md`) sont formalisés. Prochaine étape : fixer le seuil chiffré du critère de succès métier.
