@@ -23,6 +23,8 @@ Il ne vise pas à réaliser une application mobile complète. Les fonctionnalit�
 
 Le détail (décision de cadrage, données retenues, hors périmètre, hypothèses) est formalisé dans [`Travail/01-poc/perimetre-poc.md`](Travail/01-poc/perimetre-poc.md).
 
+Le besoin est traduit en problème ML dans [`Travail/01-poc/probleme-ml.md`](Travail/01-poc/probleme-ml.md) : deux approches candidates (correspondance par tags, matching structuré par similarité vectorielle) sont comparées sur un protocole d'évaluation commun, jugé par des experts métier à l'aveugle.
+
 ## Structure du dépôt
 
 ```text
@@ -33,7 +35,8 @@ Le détail (décision de cadrage, données retenues, hors périmètre, hypothès
 ├── Sources/                         # Ressources de référence (métier, données, pricing Azure, templates)
 ├── Travail/
 │   ├── 01-poc/
-│   │   └── perimetre-poc.md         # Cadrage du périmètre du PoC (entrées, sorties, hors périmètre, hypothèses)
+│   │   ├── perimetre-poc.md         # Cadrage du périmètre du PoC (entrées, sorties, hors périmètre, hypothèses)
+│   │   └── probleme-ml.md           # Traduction en problème ML : approches candidates et protocole d'évaluation
 │   ├── 02-solution-production/      # Travaux à venir : architecture et déploiement cible
 │   └── 03-donnees-personnelles/     # Travaux à venir : traitement des données personnelles et risques
 └── Presentation/                    # Support de restitution final
@@ -44,9 +47,9 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 ## Feuille de route
 
 - [x] Formaliser le périmètre et les hypothèses du PoC.
-- [ ] Définir le critère de succès métier du PoC.
+- [x] Définir l'approche de recommandation et le protocole d'évaluation.
 - [ ] Identifier les jeux de données et évaluer leur adéquation.
-- [ ] Définir l'approche de recommandation et le protocole d'évaluation.
+- [ ] Définir le critère de succès métier du PoC (seuil chiffré à valider).
 - [ ] Proposer le system design cible.
 - [ ] Construire la timeline de livraison et le dimensionnement du projet.
 - [ ] Documenter le traitement des données personnelles, les risques et les mesures associées.
@@ -54,4 +57,4 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 
 ## État actuel
 
-Le périmètre du PoC et ses hypothèses sont formalisés dans `Travail/01-poc/perimetre-poc.md`. Prochaine étape : définir le critère de succès métier, puis traduire le besoin en problème ML.
+Le périmètre du PoC (`perimetre-poc.md`) et sa traduction en problème ML (`probleme-ml.md`, deux approches comparées) sont formalisés. Prochaine étape : rechercher les jeux de données candidats, puis fixer le seuil chiffré du critère de succès métier.
