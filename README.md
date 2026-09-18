@@ -15,6 +15,10 @@ Le travail porte notamment sur :
 - la planification, les compétences nécessaires et l'estimation économique ;
 - la protection des données personnelles et les principaux risques.
 
+## Contexte métier et valeur ajoutée de l'IA
+
+Le rappel du contexte métier (chiffres clés Fashion-Insta, projet d'application mobile, enjeu du COMEX) et l'argumentaire de valeur ajoutée de l'IA (pourquoi une approche ML plutôt qu'une règle statique, impact business attendu) sont formalisés dans [`Travail/01-poc/contexte-valeur-ia.md`](Travail/01-poc/contexte-valeur-ia.md).
+
 ## Périmètre du PoC
 
 Le PoC se concentre sur la recommandation stylistique : analyser des photos de l'utilisateur portant les vêtements de sa garde-robe, puis proposer un petit nombre d'articles du catalogue Fashion-Insta correspondant aux goûts déduits de cette garde-robe.
@@ -48,7 +52,8 @@ Les limites et risques du PoC (périmètre, donnée, méthode, exécution) sont 
 │   │   ├── datasets-candidats.md    # Dataset candidat pour simuler les photos de garde-robe, et ses limites
 │   │   ├── critere-succes.md        # Critère de succès métier et traduction technique (NDCG@5)
 │   │   ├── dimensionnement.md       # Durée, profils et jours-hommes du PoC, et risques de chiffrage
-│   │   └── limites-risques.md       # Synthèse des limites et risques du PoC (renvois, sans redétailler)
+│   │   ├── limites-risques.md       # Synthèse des limites et risques du PoC (renvois, sans redétailler)
+│   │   └── contexte-valeur-ia.md    # Rappel du contexte métier et valeur ajoutée de l'IA
 │   ├── 02-solution-production/      # Travaux à venir : architecture et déploiement cible
 │   └── 03-donnees-personnelles/     # Travaux à venir : traitement des données personnelles et risques
 └── Presentation/                    # Support de restitution final
@@ -64,6 +69,7 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 - [x] Définir le critère de succès métier du PoC (seuil chiffré à valider).
 - [x] Estimer la durée et les profils/jours-hommes nécessaires au PoC.
 - [x] Lister les limites et risques du PoC (prochaines étapes hors périmètre : dans le .pptx).
+- [x] Rappeler le contexte métier et formaliser la valeur ajoutée de l'IA.
 - [ ] Proposer le system design cible.
 - [ ] Construire la timeline de livraison et le dimensionnement économique du projet en production.
 - [ ] Documenter le traitement des données personnelles, les risques et les mesures associées.
@@ -71,4 +77,4 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 
 ## État actuel
 
-Le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés. Prochaine étape : construire le contenu du support de restitution (.pptx).
+Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés. Prochaine étape : construire le contenu du support de restitution (.pptx).
