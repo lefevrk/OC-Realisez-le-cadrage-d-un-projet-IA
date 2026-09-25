@@ -39,7 +39,9 @@ Les limites et risques du PoC (périmètre, donnée, méthode, exécution) sont 
 
 ## Solution en production
 
-Le System Design de la solution en production (briques Data & IA end-to-end, de l'utilisateur à la donnée brute, avec équivalents Azure) est formalisé dans [`Travail/02-solution-production/system-design.md`](Travail/02-solution-production/system-design.md). Il couvre l'ensemble des besoins métiers touchant à la donnée ou à l'IA (recommandation garde-robe, virtual try-on génératif, recommandation par préférences/tendances, boucle de feedback, gestion des données personnelles), pas seulement la brique validée par le PoC.
+Le System Design de la solution en production (briques Data & IA end-to-end, de l'utilisateur à la donnée brute, avec équivalents Azure) est formalisé dans [`Travail/02-solution-production/system-design.md`](Travail/02-solution-production/system-design.md). Il couvre l'ensemble des besoins métiers touchant à la donnée ou à l'IA (recommandation garde-robe, virtual try-on génératif, recommandation par préférences/tendances, boucle de feedback, gestion des données personnelles), au-delà de la brique étudiée dans le cadrage du PoC.
+
+La répartition des profils Data par brique, les responsabilités d'exploitation et les décisions transverses sont précisées dans [`Travail/02-solution-production/roles-responsabilites.md`](Travail/02-solution-production/roles-responsabilites.md).
 
 ## Structure du dépôt
 
@@ -48,23 +50,19 @@ Le System Design de la solution en production (briques Data & IA end-to-end, de 
 ├── README.md                        # Vue d'ensemble et conventions du dépôt
 ├── .gitignore                       # Exclusions de versionnement
 ├── Projet/                          # Mission et documents fournis par l'école/Alicia
-├── Sources/                         # Ressources de référence (métier, données, pricing Azure, templates)
-├── Travail/
-│   ├── 01-poc/
-│   │   ├── perimetre-poc.md         # Cadrage du périmètre du PoC (entrées, sorties, hors périmètre, hypothèses)
-│   │   ├── probleme-ml.md           # Traduction en problème ML : approches candidates et protocole d'évaluation
-│   │   ├── datasets-candidats.md    # Dataset candidat pour simuler les photos de garde-robe, et ses limites
-│   │   ├── critere-succes.md        # Critère de succès métier et traduction technique (NDCG@5)
-│   │   ├── dimensionnement.md       # Durée, profils et jours-hommes du PoC, et risques de chiffrage
-│   │   ├── limites-risques.md       # Synthèse des limites et risques du PoC (renvois, sans redétailler)
-│   │   └── contexte-valeur-ia.md    # Rappel du contexte métier et valeur ajoutée de l'IA
-│   ├── 02-solution-production/
-│   │   └── system-design.md         # System Design end-to-end de la solution en production, équivalents Azure
-│   └── 03-donnees-personnelles/     # Travaux à venir : traitement des données personnelles et risques
-└── Presentation/                    # Support de restitution final
+└── Travail/
+    ├── 01-poc/
+    │   ├── perimetre-poc.md         # Cadrage du périmètre du PoC (entrées, sorties, hors périmètre, hypothèses)
+    │   ├── probleme-ml.md           # Traduction en problème ML : approches candidates et protocole d'évaluation
+    │   ├── datasets-candidats.md    # Dataset candidat pour simuler les photos de garde-robe, et ses limites
+    │   ├── critere-succes.md        # Critère de succès métier et traduction technique (NDCG@5)
+    │   ├── dimensionnement.md       # Durée, profils et jours-hommes du PoC, et risques de chiffrage
+    │   ├── limites-risques.md       # Synthèse des limites et risques du PoC
+    │   └── contexte-valeur-ia.md    # Rappel du contexte métier et valeur ajoutée de l'IA
+    └── 02-solution-production/
+        ├── system-design.md         # System Design end-to-end de la solution en production, équivalents Azure
+        └── roles-responsabilites.md # Répartition des profils Data et matrice RACI
 ```
-
-La structure évoluera avec les prochaines étapes. Les répertoires seront ajoutés lorsqu'ils accueilleront un contenu utile au projet.
 
 ## Feuille de route
 
@@ -73,16 +71,16 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 - [x] Identifier un jeu de données candidat et évaluer son adéquation.
 - [x] Définir le critère de succès métier du PoC (seuil chiffré à valider).
 - [x] Estimer la durée et les profils/jours-hommes nécessaires au PoC.
-- [x] Lister les limites et risques du PoC (prochaines étapes hors périmètre : dans le .pptx).
+- [x] Lister les limites et risques du PoC.
 - [x] Rappeler le contexte métier et formaliser la valeur ajoutée de l'IA.
 - [x] Proposer le system design cible.
-- [ ] Découper les rôles et responsabilités par profil Data pour chaque brique.
+- [x] Découper les rôles et responsabilités par profil Data pour chaque brique.
 - [ ] Construire la timeline de livraison et le dimensionnement économique du projet en production.
 - [ ] Documenter le traitement des données personnelles, les risques et les mesures associées.
 - [ ] Préparer le support de restitution final (.pptx).
 
 ## État actuel
 
-Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés, ainsi que le support de restitution du PoC (.pptx).
+Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés.
 
-Le System Design de la solution en production (`system-design.md`) est formalisé. Prochaine étape : le découpage des rôles et responsabilités par profil Data pour chaque brique.
+Le System Design de la solution en production (`system-design.md`) et la répartition des rôles et responsabilités (`roles-responsabilites.md`) sont formalisés. La timeline, le dimensionnement économique, la politique de traitement des données personnelles et le support de restitution restent à préparer.
