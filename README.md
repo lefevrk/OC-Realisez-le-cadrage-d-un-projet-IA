@@ -37,6 +37,10 @@ La durée et le dimensionnement en profils/jours-hommes du PoC (~21,5 jours-homm
 
 Les limites et risques du PoC (périmètre, donnée, méthode, exécution) sont synthétisés dans [`Travail/01-poc/limites-risques.md`](Travail/01-poc/limites-risques.md), qui renvoie vers le détail déjà formalisé dans les documents précédents plutôt que de le redupliquer. Les prochaines étapes hors périmètre seront présentées directement dans le support de restitution (.pptx).
 
+## Solution en production
+
+Le System Design de la solution en production (briques Data & IA end-to-end, de l'utilisateur à la donnée brute, avec équivalents Azure) est formalisé dans [`Travail/02-solution-production/system-design.md`](Travail/02-solution-production/system-design.md). Il couvre l'ensemble des besoins métiers touchant à la donnée ou à l'IA (recommandation garde-robe, virtual try-on génératif, recommandation par préférences/tendances, boucle de feedback, gestion des données personnelles), pas seulement la brique validée par le PoC.
+
 ## Structure du dépôt
 
 ```text
@@ -54,7 +58,8 @@ Les limites et risques du PoC (périmètre, donnée, méthode, exécution) sont 
 │   │   ├── dimensionnement.md       # Durée, profils et jours-hommes du PoC, et risques de chiffrage
 │   │   ├── limites-risques.md       # Synthèse des limites et risques du PoC (renvois, sans redétailler)
 │   │   └── contexte-valeur-ia.md    # Rappel du contexte métier et valeur ajoutée de l'IA
-│   ├── 02-solution-production/      # Travaux à venir : architecture et déploiement cible
+│   ├── 02-solution-production/
+│   │   └── system-design.md         # System Design end-to-end de la solution en production, équivalents Azure
 │   └── 03-donnees-personnelles/     # Travaux à venir : traitement des données personnelles et risques
 └── Presentation/                    # Support de restitution final
 ```
@@ -70,11 +75,14 @@ La structure évoluera avec les prochaines étapes. Les répertoires seront ajou
 - [x] Estimer la durée et les profils/jours-hommes nécessaires au PoC.
 - [x] Lister les limites et risques du PoC (prochaines étapes hors périmètre : dans le .pptx).
 - [x] Rappeler le contexte métier et formaliser la valeur ajoutée de l'IA.
-- [ ] Proposer le system design cible.
+- [x] Proposer le system design cible.
+- [ ] Découper les rôles et responsabilités par profil Data pour chaque brique.
 - [ ] Construire la timeline de livraison et le dimensionnement économique du projet en production.
 - [ ] Documenter le traitement des données personnelles, les risques et les mesures associées.
 - [ ] Préparer le support de restitution final (.pptx).
 
 ## État actuel
 
-Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés. Prochaine étape : construire le contenu du support de restitution (.pptx).
+Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés, ainsi que le support de restitution du PoC (.pptx).
+
+Le System Design de la solution en production (`system-design.md`) est formalisé. Prochaine étape : le découpage des rôles et responsabilités par profil Data pour chaque brique.
