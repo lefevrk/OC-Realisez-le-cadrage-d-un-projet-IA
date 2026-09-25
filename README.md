@@ -45,6 +45,8 @@ La répartition des profils Data par brique, les responsabilités d'exploitation
 
 La timeline de livraison (phases PoC/MVP/Run, tâches et livrables clés, taux de staffing par profil et instances de réunion) est formalisée dans [`Travail/02-solution-production/timeline.md`](Travail/02-solution-production/timeline.md).
 
+Le dimensionnement économique (coûts RH et technologiques, one-shot et récurrents, best/worst case) est formalisé dans [`Travail/02-solution-production/couts.md`](Travail/02-solution-production/couts.md). Une projection de couverture de ces coûts par les ventes additionnelles estimées par le Marketing est présentée dans [`Travail/02-solution-production/roi.md`](Travail/02-solution-production/roi.md).
+
 ## Structure du dépôt
 
 ```text
@@ -64,7 +66,9 @@ La timeline de livraison (phases PoC/MVP/Run, tâches et livrables clés, taux d
     └── 02-solution-production/
         ├── system-design.md         # System Design end-to-end de la solution en production, équivalents Azure
         ├── roles-responsabilites.md # Répartition des profils Data et matrice RACI
-        └── timeline.md               # Phases PoC/MVP/Run, tâches, livrables, staffing et instances de réunion
+        ├── timeline.md               # Phases PoC/MVP/Run, tâches, livrables, staffing et instances de réunion
+        ├── couts.md                  # Coûts RH et technologiques, one-shot et récurrents, best/worst case
+        └── roi.md                    # Projection de couverture des coûts par les ventes marketing
 ```
 
 ## Feuille de route
@@ -79,7 +83,7 @@ La timeline de livraison (phases PoC/MVP/Run, tâches et livrables clés, taux d
 - [x] Proposer le system design cible.
 - [x] Découper les rôles et responsabilités par profil Data pour chaque brique.
 - [x] Construire la timeline de livraison du projet en production.
-- [ ] Dimensionner économiquement le projet en production (coûts one-shot/récurrents, ROI).
+- [x] Dimensionner économiquement le projet en production (coûts one-shot/récurrents, projection de couverture par les ventes marketing).
 - [ ] Documenter le traitement des données personnelles, les risques et les mesures associées.
 - [ ] Préparer le support de restitution final (.pptx).
 
@@ -87,4 +91,4 @@ La timeline de livraison (phases PoC/MVP/Run, tâches et livrables clés, taux d
 
 Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés.
 
-Le System Design de la solution en production (`system-design.md`), la répartition des rôles et responsabilités (`roles-responsabilites.md`) et la timeline de livraison (`timeline.md`, phases PoC/MVP/Run) sont formalisés. Le dimensionnement économique, la politique de traitement des données personnelles et le support de restitution restent à préparer.
+Le System Design de la solution en production (`system-design.md`), la répartition des rôles et responsabilités (`roles-responsabilites.md`), la timeline de livraison (`timeline.md`, phases PoC/MVP/Run) et le dimensionnement économique (`couts.md`, `roi.md`) sont formalisés. La politique de traitement des données personnelles et le support de restitution restent à préparer.
