@@ -15,7 +15,7 @@
 
 Répartition indicative des 3 Data Scientists et des 2 Data Engineers par domaine, à confirmer selon les disponibilités :
 
-- **DS1 — Recommandation garde-robe** : exécution du PoC (approche B), jalon de décision conserver l'approche par attributs ou entraîner l'embedder appris (voir [`system-design.md`](system-design.md)), agrégation du profil utilisateur, filtres métier de la reco garde-robe.
+- **DS1 — Recommandation garde-robe** : exécution du PoC (approche B), jalon de décision post-PoC (attributs classifiés vs embedder appris — voir [`system-design.md`](system-design.md)), agrégation du profil utilisateur, filtres métier de la reco garde-robe.
 - **DS2 — Préférences & tendances** : extraction NLP du signal de tendance, logique de filtre/tri de la reco préférences.
 - **DS3 — Virtual try-on génératif** : sélection, calibration et évaluation du modèle de diffusion.
 - **DE1 — Données utilisateur** : stockage photos, stockage structuré, gateway applicatif, jobs de purge RGPD.
@@ -32,14 +32,14 @@ Cette répartition **n'est pas figée par brique** : en particulier, le MLOps En
 | Stockage structuré (SQL Database) | Data Engineer (DE1) | Data Engineer (DE1) | Schéma de base déployé et documenté |
 | Ingestion des sources (Data Factory) | Data Engineer (DE2) | Data Engineer (DE2) | Pipelines d'ingestion catalogue/tendances en production, supervisés |
 | Stockage du lac de données (Data Lake) | Data Engineer (DE2) | Data Engineer (DE2) | Zones de données (brute/consolidée) organisées et documentées |
-| Entraînement et indexation (jalon PoC → embedder) | Data Scientist (DS1) — exécution du PoC, jalon de décision attributs vs. embedder appris | MLOps Engineer (réentraînement planifié, publication des nouvelles versions), Data Scientist (DS1, pertinence et évolutions du modèle) | Rapport de décision du jalon PoC, pipeline d'entraînement versionné |
+| Entraînement et indexation (jalon de décision post-PoC) | Data Scientist (DS1) — exécution du PoC, jalon de décision post-PoC (attributs classifiés vs embedder appris) | MLOps Engineer (réentraînement planifié, publication des nouvelles versions), Data Scientist (DS1, pertinence et évolutions du modèle) | Rapport du jalon de décision post-PoC, pipeline d'entraînement versionné |
 | Index vectoriel (Azure AI Search) | Data Engineer (DE2, mise en place du service et du schéma) | MLOps Engineer (publication des index, fraîcheur des données) | Index vectoriel opérationnel, procédure de publication documentée |
 | Embedding et profil utilisateur (endpoint temps réel) | Data Scientist (DS1) | MLOps Engineer (déploiement, autoscaling, monitoring), Data Scientist (DS1, pertinence et évolutions du modèle) | Endpoint déployé, SLA de latence défini et mesuré |
 | Reco garde-robe (filtres métier) | Data Scientist (DS1) | MLOps Engineer (exploitation, disponibilité), Data Scientist (DS1, pertinence et ajustement des filtres selon le feedback) | Filtres métier documentés, testés sur le protocole d'évaluation du PoC |
 | Signal de tendance (NLP) | Data Scientist (DS2) | MLOps Engineer (planification du job batch, disponibilité), Data Engineer (DE2, fraîcheur des textes en entrée), Data Scientist (DS2, pertinence du score) | Job batch en production, score de tendance documenté |
 | Reco préférences & tendances | Data Scientist (DS2) | MLOps Engineer (exploitation, disponibilité), Data Scientist (DS2, pertinence et évolutions) | Logique de filtre/tri documentée et testable |
 | Virtual try-on génératif | Data Scientist (DS3) | MLOps Engineer (infrastructure GPU, file d'attente, disponibilité, coûts), Data Scientist (DS3, qualité des rendus) | Modèle calibré, file d'attente et coûts par essai mesurés |
-| Collecte du feedback et mesure d'impact | Data Engineer (DE1, pipeline de collecte/fiabilisation des avis et événements de conversion) | Data Engineer (DE1, exploitation du pipeline de collecte), Data Scientist (analyse des indicateurs de pertinence et de ventes) ; Marketing comme interlocuteur de validation de l'interprétation | Tableau de bord des indicateurs de pertinence/ventes, partagé et validé avec le Marketing (alimente le ROI de l'étape Coûts & ROI) |
+| Collecte du feedback et mesure d'impact | Data Engineer (DE1, pipeline de collecte/fiabilisation des avis et événements de conversion) | Data Engineer (DE1, exploitation du pipeline de collecte), Data Scientist (analyse des indicateurs de pertinence et de ventes) ; Marketing comme interlocuteur de validation de l'interprétation | Tableau de bord des indicateurs de pertinence et de ventes observés, partagé et validé avec le Marketing pour le suivi après lancement |
 | Gestion RGPD (purge, export) | Data Engineer (DE1) | Data Engineer (DE1) pour la mise en œuvre technique ; règles de conservation et décisions de conformité validées avec le responsable métier/juridique compétent | Politique de rétention documentée et validée, jobs de purge testés |
 | Sécurité transverse (identité, secrets, réseau) | Tech Lead (architecture de sécurité) + Data Engineer (implémentation) | Data Engineer, revue périodique par le Tech Lead | Revue de sécurité documentée (identités, secrets, accès réseau) |
 | MLOps et observabilité | MLOps Engineer (pipelines, registre, alerting) | MLOps Engineer ; arbitrage des seuils de dérive avec le Tech Lead et les Data Scientists concernés | Tableau de bord de monitoring (latence, coût, dérive, taux d'échec) en production |
@@ -52,7 +52,7 @@ Le **MLOps Engineer** assure une exploitation transverse commune à l'ensemble d
 
 La **validation métier** des résultats (pertinence perçue, seuils de succès, interprétation des indicateurs de vente) passe par les instances de gouvernance du projet (Copil, experts métier).
 
-**Capacité MLOps** : plusieurs mises en production simultanées peuvent saturer l'unique MLOps Engineer. La timeline doit séquencer les livraisons et prévoir un taux de staffing adapté à chaque phase.
+**Capacité MLOps** : les livraisons sont séquencées entre MVP et Run pour répartir la charge de l'unique MLOps Engineer entre mises en production et exploitation.
 
 ## RACI — décisions clés
 
@@ -64,4 +64,4 @@ Cette matrice précise les responsabilités liées aux décisions transverses. *
 | Publication d'un modèle et de son index en production | MLOps Engineer | Tech Lead | DS concerné, DE2 | Reste de l'équipe Data |
 | Validation de la pertinence des recommandations (seuils métier) | DS concerné | Responsable métier | MLOps Engineer | Tech Lead |
 | Politique de rétention et de purge RGPD | DE1 | Responsable juridique/DPO | Responsable métier, Tech Lead | Reste de l'équipe Data |
-| Interprétation des indicateurs de pertinence/ventes (ROI) | DS (analyse) | Marketing | DE1 | Tech Lead, Alicia (VP Product) |
+| Interprétation des indicateurs de pertinence/ventes observés après lancement | DS (analyse) | Marketing | DE1 | Tech Lead, Alicia (VP Product) |

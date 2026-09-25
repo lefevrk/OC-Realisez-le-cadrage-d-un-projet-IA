@@ -43,6 +43,8 @@ Le System Design de la solution en production (briques Data & IA end-to-end, de 
 
 La répartition des profils Data par brique, les responsabilités d'exploitation et les décisions transverses sont précisées dans [`Travail/02-solution-production/roles-responsabilites.md`](Travail/02-solution-production/roles-responsabilites.md).
 
+La timeline de livraison (phases PoC/MVP/Run, tâches et livrables clés, taux de staffing par profil et instances de réunion) est formalisée dans [`Travail/02-solution-production/timeline.md`](Travail/02-solution-production/timeline.md).
+
 ## Structure du dépôt
 
 ```text
@@ -61,7 +63,8 @@ La répartition des profils Data par brique, les responsabilités d'exploitation
     │   └── contexte-valeur-ia.md    # Rappel du contexte métier et valeur ajoutée de l'IA
     └── 02-solution-production/
         ├── system-design.md         # System Design end-to-end de la solution en production, équivalents Azure
-        └── roles-responsabilites.md # Répartition des profils Data et matrice RACI
+        ├── roles-responsabilites.md # Répartition des profils Data et matrice RACI
+        └── timeline.md               # Phases PoC/MVP/Run, tâches, livrables, staffing et instances de réunion
 ```
 
 ## Feuille de route
@@ -75,7 +78,8 @@ La répartition des profils Data par brique, les responsabilités d'exploitation
 - [x] Rappeler le contexte métier et formaliser la valeur ajoutée de l'IA.
 - [x] Proposer le system design cible.
 - [x] Découper les rôles et responsabilités par profil Data pour chaque brique.
-- [ ] Construire la timeline de livraison et le dimensionnement économique du projet en production.
+- [x] Construire la timeline de livraison du projet en production.
+- [ ] Dimensionner économiquement le projet en production (coûts one-shot/récurrents, ROI).
 - [ ] Documenter le traitement des données personnelles, les risques et les mesures associées.
 - [ ] Préparer le support de restitution final (.pptx).
 
@@ -83,4 +87,4 @@ La répartition des profils Data par brique, les responsabilités d'exploitation
 
 Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés.
 
-Le System Design de la solution en production (`system-design.md`) et la répartition des rôles et responsabilités (`roles-responsabilites.md`) sont formalisés. La timeline, le dimensionnement économique, la politique de traitement des données personnelles et le support de restitution restent à préparer.
+Le System Design de la solution en production (`system-design.md`), la répartition des rôles et responsabilités (`roles-responsabilites.md`) et la timeline de livraison (`timeline.md`, phases PoC/MVP/Run) sont formalisés. Le dimensionnement économique, la politique de traitement des données personnelles et le support de restitution restent à préparer.
