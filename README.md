@@ -49,6 +49,16 @@ Le dimensionnement économique (coûts RH et technologiques, one-shot et récurr
 
 Les limites et risques de la solution en production (périmètre, données personnelles et RGPD, chiffrage économique, exécution) sont synthétisés dans [`Travail/02-solution-production/limites-risques.md`](Travail/02-solution-production/limites-risques.md), qui renvoie vers le détail déjà formalisé dans les documents précédents plutôt que de le redupliquer.
 
+## Gestion des données personnelles et RGPD
+
+L'inventaire des données personnelles traitées par la solution, au-delà de l'analyse d'image, est formalisé dans [`Travail/03-rgpd/inventaire-donnees-personnelles.md`](Travail/03-rgpd/inventaire-donnees-personnelles.md).
+
+La traduction des grands principes du RGPD en risques concrets pour ce projet est formalisée dans [`Travail/03-rgpd/principes-rgpd-risques.md`](Travail/03-rgpd/principes-rgpd-risques.md).
+
+Les mesures de protection associées, avec leur emplacement précis dans le System Design (anonymisation, sécurité, rétention), sont formalisées dans [`Travail/03-rgpd/mesures-protection.md`](Travail/03-rgpd/mesures-protection.md).
+
+La réponse à l'exigence du DPO sur l'entraînement de LLM, incluant les contrôles contractuels et techniques à valider avant mise en production, ainsi que l'alternative aux APIs publiques pour les sources de tendances, est formalisée dans [`Travail/03-rgpd/garantie-llm-apis-publiques.md`](Travail/03-rgpd/garantie-llm-apis-publiques.md).
+
 ## Structure du dépôt
 
 ```text
@@ -65,13 +75,18 @@ Les limites et risques de la solution en production (périmètre, données perso
     │   ├── dimensionnement.md       # Durée, profils et jours-hommes du PoC, et risques de chiffrage
     │   ├── limites-risques.md       # Synthèse des limites et risques du PoC
     │   └── contexte-valeur-ia.md    # Rappel du contexte métier et valeur ajoutée de l'IA
-    └── 02-solution-production/
+    ├── 02-solution-production/
         ├── system-design.md         # System Design end-to-end de la solution en production, équivalents Azure
         ├── roles-responsabilites.md # Répartition des profils Data et matrice RACI
         ├── timeline.md               # Phases PoC/MVP/Run, tâches, livrables, staffing et instances de réunion
         ├── couts.md                  # Coûts RH et technologiques, one-shot et récurrents, best/worst case
         ├── roi.md                    # Projection de couverture des coûts par les ventes marketing
         └── limites-risques.md        # Synthèse des limites et risques de la solution en production
+    └── 03-rgpd/
+        ├── inventaire-donnees-personnelles.md  # Données personnelles traitées, au-delà de l'analyse d'image
+        ├── principes-rgpd-risques.md            # Grands principes RGPD traduits en risques du projet
+        ├── mesures-protection.md                # Mesures de protection, localisées dans le System Design
+        └── garantie-llm-apis-publiques.md       # Contrôles anti-entraînement LLM, alternative aux APIs publiques
 ```
 
 ## Feuille de route
@@ -87,11 +102,17 @@ Les limites et risques de la solution en production (périmètre, données perso
 - [x] Découper les rôles et responsabilités par profil Data pour chaque brique.
 - [x] Construire la timeline de livraison du projet en production.
 - [x] Dimensionner économiquement le projet en production (coûts one-shot/récurrents, projection de couverture par les ventes marketing).
-- [x] Documenter le traitement des données personnelles, les risques et les mesures associées.
+- [x] Documenter le traitement des données personnelles, les risques et les mesures associées (synthèse dans `limites-risques.md`).
+- [x] Inventorier les données personnelles traitées au-delà de l'analyse d'image.
+- [x] Traduire les grands principes RGPD en risques concrets pour le projet.
+- [x] Proposer les mesures de protection et les situer dans le System Design.
+- [x] Formaliser les contrôles anti-entraînement LLM et l'alternative aux APIs publiques pour les sources de tendances.
 - [ ] Préparer le support de restitution final (.pptx).
 
 ## État actuel
 
 Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le périmètre du PoC (`perimetre-poc.md`), sa traduction en problème ML (`probleme-ml.md`, deux approches comparées), le dataset candidat (`datasets-candidats.md`), le critère de succès (`critere-succes.md`), le dimensionnement (`dimensionnement.md`, ~21,5 jours-hommes sur 4 à 5 semaines) et les limites/risques (`limites-risques.md`) sont formalisés.
 
-Le System Design de la solution en production (`system-design.md`), la répartition des rôles et responsabilités (`roles-responsabilites.md`), la timeline de livraison (`timeline.md`, phases PoC/MVP/Run), le dimensionnement économique (`couts.md`, `roi.md`) et les limites/risques (`limites-risques.md`) sont formalisés. Le support de restitution reste à préparer.
+Le System Design de la solution en production (`system-design.md`), la répartition des rôles et responsabilités (`roles-responsabilites.md`), la timeline de livraison (`timeline.md`, phases PoC/MVP/Run), le dimensionnement économique (`couts.md`, `roi.md`) et les limites/risques (`limites-risques.md`) sont formalisés.
+
+L'inventaire des données personnelles (`inventaire-donnees-personnelles.md`), les grands principes RGPD traduits en risques (`principes-rgpd-risques.md`), les mesures de protection associées (`mesures-protection.md`) et les contrôles à valider contre l'entraînement LLM / l'alternative aux APIs publiques (`garantie-llm-apis-publiques.md`) sont formalisés. Le support de restitution reste à préparer.
