@@ -1,5 +1,7 @@
 # Cadrage d'un projet IA — Fashion-Insta
 
+![Couverture de la présentation de cadrage du PoC IA Fashion-Insta](assets/apercu-support-restitution.png)
+
 Ce dépôt documente le cadrage progressif d'un projet de recommandation d'articles de mode fondé sur l'analyse de photos de vêtements. Il a vocation à conserver les décisions, hypothèses, recherches et livrables produits au fil du projet.
 
 ## Objectif
@@ -45,6 +47,10 @@ Les limites et risques du PoC (périmètre, donnée, méthode, exécution) sont 
 
 Le System Design de la solution en production (briques Data & IA end-to-end, de l'utilisateur à la donnée brute, avec équivalents Azure) est formalisé dans [`Travail/02-solution-production/system-design.md`](Travail/02-solution-production/system-design.md). Il couvre l'ensemble des besoins métiers touchant à la donnée ou à l'IA (recommandation garde-robe, virtual try-on génératif, recommandation par préférences/tendances, boucle de feedback, gestion des données personnelles), au-delà de la brique étudiée dans le cadrage du PoC.
 
+![Diagramme d'architecture de la plateforme Data et IA Fashion-Insta](assets/architecture-solution-production.png)
+
+*Extrait du support de restitution final. Le détail des briques, flux et contrôles de sécurité figure dans le [System Design](Travail/02-solution-production/system-design.md).*
+
 La répartition des profils Data par brique, les responsabilités d'exploitation et les décisions transverses sont précisées dans [`Travail/02-solution-production/roles-responsabilites.md`](Travail/02-solution-production/roles-responsabilites.md).
 
 La timeline de livraison (phases PoC/MVP/Run, tâches et livrables clés, taux de staffing par profil et instances de réunion) est formalisée dans [`Travail/02-solution-production/timeline.md`](Travail/02-solution-production/timeline.md).
@@ -70,6 +76,7 @@ La réponse à l'exigence du DPO sur l'entraînement de LLM, incluant les contr�
 ├── README.md                        # Vue d'ensemble et conventions du dépôt
 ├── .gitignore                       # Exclusions de versionnement
 ├── PoC IA Mode Fashion Insta.pptx    # Support de restitution final
+├── assets/                           # Aperçus visuels du support final
 ├── Projet/                          # Mission et documents fournis par l'école/Alicia
 └── Travail/
     ├── 01-poc/
