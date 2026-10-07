@@ -15,6 +15,10 @@ Le travail porte notamment sur :
 - la planification, les compétences nécessaires et l'estimation économique ;
 - la protection des données personnelles et les principaux risques.
 
+## Support de restitution final
+
+Le livrable de soutenance, qui rassemble le cadrage du PoC, la solution de production, le dimensionnement économique et la politique de protection des données personnelles, est disponible ici : [PoC IA Mode Fashion Insta.pptx](PoC%20IA%20Mode%20Fashion%20Insta.pptx).
+
 ## Contexte métier et valeur ajoutée de l'IA
 
 Le rappel du contexte métier (chiffres clés Fashion-Insta, projet d'application mobile, enjeu du COMEX) et l'argumentaire de valeur ajoutée de l'IA (pourquoi une approche ML plutôt qu'une règle statique, impact business attendu) sont formalisés dans [`Travail/01-poc/contexte-valeur-ia.md`](Travail/01-poc/contexte-valeur-ia.md).
@@ -35,7 +39,7 @@ Le critère de succès métier et sa traduction technique (NDCG@5 ≥ 0,7) sont 
 
 La durée et le dimensionnement en profils/jours-hommes du PoC (~21,5 jours-hommes, 4 à 5 semaines) sont détaillés dans [`Travail/01-poc/dimensionnement.md`](Travail/01-poc/dimensionnement.md), avec les principaux risques de chiffrage.
 
-Les limites et risques du PoC (périmètre, donnée, méthode, exécution) sont synthétisés dans [`Travail/01-poc/limites-risques.md`](Travail/01-poc/limites-risques.md), qui renvoie vers le détail déjà formalisé dans les documents précédents plutôt que de le redupliquer. Les prochaines étapes hors périmètre seront présentées directement dans le support de restitution (.pptx).
+Les limites et risques du PoC (périmètre, donnée, méthode, exécution) sont synthétisés dans [`Travail/01-poc/limites-risques.md`](Travail/01-poc/limites-risques.md), qui renvoie vers le détail déjà formalisé dans les documents précédents plutôt que de le redupliquer.
 
 ## Solution en production
 
@@ -65,6 +69,7 @@ La réponse à l'exigence du DPO sur l'entraînement de LLM, incluant les contr�
 .
 ├── README.md                        # Vue d'ensemble et conventions du dépôt
 ├── .gitignore                       # Exclusions de versionnement
+├── PoC IA Mode Fashion Insta.pptx    # Support de restitution final
 ├── Projet/                          # Mission et documents fournis par l'école/Alicia
 └── Travail/
     ├── 01-poc/
@@ -76,12 +81,12 @@ La réponse à l'exigence du DPO sur l'entraînement de LLM, incluant les contr�
     │   ├── limites-risques.md       # Synthèse des limites et risques du PoC
     │   └── contexte-valeur-ia.md    # Rappel du contexte métier et valeur ajoutée de l'IA
     ├── 02-solution-production/
-        ├── system-design.md         # System Design end-to-end de la solution en production, équivalents Azure
-        ├── roles-responsabilites.md # Répartition des profils Data et matrice RACI
-        ├── timeline.md               # Phases PoC/MVP/Run, tâches, livrables, staffing et instances de réunion
-        ├── couts.md                  # Coûts RH et technologiques, one-shot et récurrents, best/worst case
-        ├── roi.md                    # Projection de couverture des coûts par les ventes marketing
-        └── limites-risques.md        # Synthèse des limites et risques de la solution en production
+    │   ├── system-design.md         # System Design end-to-end de la solution en production, équivalents Azure
+    │   ├── roles-responsabilites.md # Répartition des profils Data et matrice RACI
+    │   ├── timeline.md               # Phases PoC/MVP/Run, tâches, livrables, staffing et instances de réunion
+    │   ├── couts.md                  # Coûts RH et technologiques, one-shot et récurrents, best/worst case
+    │   ├── roi.md                    # Projection de couverture des coûts par les ventes marketing
+    │   └── limites-risques.md        # Synthèse des limites et risques de la solution en production
     └── 03-rgpd/
         ├── inventaire-donnees-personnelles.md  # Données personnelles traitées, au-delà de l'analyse d'image
         ├── principes-rgpd-risques.md            # Grands principes RGPD traduits en risques du projet
@@ -107,7 +112,7 @@ La réponse à l'exigence du DPO sur l'entraînement de LLM, incluant les contr�
 - [x] Traduire les grands principes RGPD en risques concrets pour le projet.
 - [x] Proposer les mesures de protection et les situer dans le System Design.
 - [x] Formaliser les contrôles anti-entraînement LLM et l'alternative aux APIs publiques pour les sources de tendances.
-- [ ] Préparer le support de restitution final (.pptx).
+- [x] Préparer le support de restitution final (.pptx).
 
 ## État actuel
 
@@ -115,4 +120,4 @@ Le contexte métier et la valeur ajoutée de l'IA (`contexte-valeur-ia.md`), le 
 
 Le System Design de la solution en production (`system-design.md`), la répartition des rôles et responsabilités (`roles-responsabilites.md`), la timeline de livraison (`timeline.md`, phases PoC/MVP/Run), le dimensionnement économique (`couts.md`, `roi.md`) et les limites/risques (`limites-risques.md`) sont formalisés.
 
-L'inventaire des données personnelles (`inventaire-donnees-personnelles.md`), les grands principes RGPD traduits en risques (`principes-rgpd-risques.md`), les mesures de protection associées (`mesures-protection.md`) et les contrôles à valider contre l'entraînement LLM / l'alternative aux APIs publiques (`garantie-llm-apis-publiques.md`) sont formalisés. Le support de restitution reste à préparer.
+L'inventaire des données personnelles (`inventaire-donnees-personnelles.md`), les grands principes RGPD traduits en risques (`principes-rgpd-risques.md`), les mesures de protection associées (`mesures-protection.md`) et les contrôles à valider contre l'entraînement LLM / l'alternative aux APIs publiques (`garantie-llm-apis-publiques.md`) sont formalisés. Le support de restitution final est disponible dans [`PoC IA Mode Fashion Insta.pptx`](PoC%20IA%20Mode%20Fashion%20Insta.pptx).
